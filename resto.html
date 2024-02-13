@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTO</title>
+    <style>
+        body {
+            background-image: url('image.jpg'); /* Replace 'your-background-image.jpg' with the path to your image */
+            background-size: cover; /* This property ensures the background image covers the entire viewport */
+            background-position: center; 
+            background-repeat: no-repeat;
+            height: 530px; /* This property centers the background image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p {
+            font-family: cursive;
+        }
+        .text-bubble {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            text-align: center;
+            z-index: 2;
+        }
+        #music-player {
+            display: none;
+            max-width: 50%;
+        }
+        .controls {
+            background-color: pink;   
+        }
+        a {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: pink;
+        }
+        /* Carousel styles */
+        .carousel-container {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+            overflow: hidden;
+            z-index: 1;
+        }
+        .carousel {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: slide 20s infinite;
+        }
+        @keyframes slide {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(100%);
+            }
+            50% {
+                transform: translateY(-100%);
+            }
+            75% {
+                transform: translateY(-150%);
+            }
+        }
+        .carousel-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel">
+            <img class="carousel-image" src="img2.jpg" alt="Carousel Image 1">
+            <img class="carousel-image" src="img3.webp" alt="Carousel Image 2">
+            <img class="carousel-image" src="img4.jpg" alt="Carousel Image 3">
+              <img class="carousel-image" src="img5.jpeg" alt="Carousel Image 4">
+                <img class="carousel-image" src="us.jpg" alt="Carousel Image 5">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <div id="text-bubble" class="text-bubble">
+        <p>Hi Kyle's LOML! pleasure to have you today!<br>
+            Kyle is waiting for you!
+        </p>
+        <a href="#" id="proceed">Proceed</a>
+    </div>
+
+    <div id="music-player">
+        <!-- Your music player code goes here -->
+        <h2></h2>
+        <audio controls>
+            <source src="message.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <div id="music-player1">
+        <!-- Your music player code goes here -->
+        <h2></h2>
+        <audio autoplay>
+            <source src="bg.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        document.getElementById('proceed').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            document.getElementById('text-bubble').style.display = 'none'; // Hide text bubble
+            document.getElementById('music-player').style.display = 'block';
+            audioElement.play();
+        });
+    </script>
+</body>
+</html>
